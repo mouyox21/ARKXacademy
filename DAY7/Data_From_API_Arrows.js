@@ -9,7 +9,7 @@ const fetchData = async () => {
         console.log('FATAL ERROR: ', error.message);
     }
 };
-
+console.log(fetchData);
 const MapsUser = async () => {
     try {
         const data = await fetchData();
