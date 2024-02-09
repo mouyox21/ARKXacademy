@@ -1,0 +1,2 @@
+City: Paris
+Temperature: 13.6 °C

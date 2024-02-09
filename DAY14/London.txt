@@ -1,0 +1,2 @@
+City: London
+Temperature: 9.4 °C
