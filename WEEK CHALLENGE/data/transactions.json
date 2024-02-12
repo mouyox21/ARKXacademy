@@ -1,0 +1,32 @@
+[
+  {
+    "accountID": "ACC1001",
+    "type": "withdrawal",
+    "amount": 1000,
+    "date": "2024-02-12T08:47:14.263Z"
+  },
+  {
+    "accountID": "ACC1001",
+    "type": "deposit",
+    "amount": 1000,
+    "date": "2024-02-12T08:48:32.838Z"
+  },
+  {
+    "accountID": "ACC1001",
+    "type": "withdrawal",
+    "amount": 1000,
+    "date": "2024-02-12T08:50:19.446Z"
+  },
+  {
+    "accountID": "ACC1001",
+    "type": "deposit",
+    "amount": 123,
+    "date": "2024-02-12T08:50:31.770Z"
+  },
+  {
+    "accountID": "ACC1001",
+    "type": "withdrawal",
+    "amount": 123,
+    "date": "2024-02-12T08:51:00.716Z"
+  }
+]

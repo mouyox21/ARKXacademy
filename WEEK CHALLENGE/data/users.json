@@ -1,0 +1,102 @@
+[
+  {
+    "accountID": "ACC1001",
+    "name": "John Doe",
+    "pin": "1234",
+    "balance": 2000,
+    "transactions": [
+      { "type": "deposit", "amount": 500, "date": "2024-02-01" },
+      { "type": "withdraw", "amount": 200, "date": "2024-02-02" },
+      { "type": "deposit", "amount": 100, "date": "2024-02-11T20:44:19.412Z" },
+      { "type": "deposit", "amount": 500, "date": "2024-02-11T21:03:28.432Z" },
+      { "type": "deposit", "amount": 299, "date": "2024-02-11T21:22:29.623Z" },
+      {
+        "type": "withdrawal",
+        "amount": 399,
+        "date": "2024-02-11T21:29:49.910Z"
+      },
+      { "type": "deposit", "amount": 123, "date": "2024-02-11T21:34:09.813Z" },
+      {
+        "type": "withdrawal",
+        "amount": 123,
+        "date": "2024-02-11T21:39:06.830Z"
+      },
+      { "type": "deposit", "amount": 1000, "date": "2024-02-12T08:36:15.098Z" },
+      {
+        "type": "withdrawal",
+        "amount": 1000,
+        "date": "2024-02-12T08:43:22.228Z"
+      },
+      { "type": "deposit", "amount": 1000, "date": "2024-02-12T08:43:56.442Z" },
+      {
+        "type": "withdrawal",
+        "amount": 1000,
+        "date": "2024-02-12T08:47:14.263Z"
+      },
+      { "type": "deposit", "amount": 1000, "date": "2024-02-12T08:48:32.838Z" },
+      {
+        "type": "withdrawal",
+        "amount": 1000,
+        "date": "2024-02-12T08:50:19.446Z"
+      },
+      { "type": "deposit", "amount": 123, "date": "2024-02-12T08:50:31.770Z" },
+      {
+        "type": "withdrawal",
+        "amount": 123,
+        "date": "2024-02-12T08:51:00.716Z"
+      }
+    ]
+  },
+  {
+    "accountID": "ACC1002",
+    "name": "Jane Smith",
+    "pin": "4321",
+    "balance": 2200,
+    "transactions": [
+      { "type": "deposit", "amount": 1000, "date": "2024-02-03" },
+      { "type": "withdraw", "amount": 300, "date": "2024-02-04" }
+    ]
+  },
+  {
+    "accountID": "ACC1003",
+    "name": "mouad",
+    "pin": 1851,
+    "balance": 2001,
+    "transactions": []
+  },
+  {
+    "accountID": "ACC1004",
+    "name": "ANIBA",
+    "pin": 8178,
+    "balance": 900,
+    "transactions": []
+  },
+  {
+    "accountID": "ACC1005",
+    "name": "REDA",
+    "pin": 5718,
+    "balance": 800,
+    "transactions": []
+  },
+  {
+    "accountID": "ACC1006",
+    "name": "MARWANE",
+    "pin": 1551,
+    "balance": 900,
+    "transactions": []
+  },
+  {
+    "accountID": "ACC1007",
+    "name": "YOUNESS",
+    "pin": 6927,
+    "balance": 800,
+    "transactions": []
+  },
+  {
+    "accountID": "ACC1008",
+    "name": "ala",
+    "pin": 5589,
+    "balance": 8000,
+    "transactions": []
+  }
+]
