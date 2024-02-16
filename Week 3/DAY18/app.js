@@ -4,9 +4,6 @@ const fs = require('fs');
 const app = express();
 const port = 3000;
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -17,7 +14,7 @@ const products = require('./products.json');
 function loggingMiddleware(req, res, next) {
 
     const currentDate = new Date();
-    const log=`[${currentDate.toLocaleString()}] ${req.method} ${req.url}\n`;
+    const log=`\n[${currentDate.toLocaleString()}] ${req.method} ${req.url}`;
     console.log(log);
     // Creating a new file
         fs.appendFile('log.txt', log, (err) => {
@@ -33,20 +30,19 @@ function loggingMiddleware(req, res, next) {
 
 app.use(loggingMiddleware);
 
-// Error Handling Middleware
-function errorHandler(err, req, res, next) {
-    console.error(err.msg); // Log the error
 
-    // Send user-friendly error message
-    res.status(500).send('Something went wrong!');
-    next()
-}
 
-app.use(errorHandler);
 
-app.delete('/products/:id', (req, res) => {
+
+app.delete('/products/:id', (req, res,next) => {
 
     const productId = parseInt(req.params.id);
+    if(!productId) {
+        const error = new Error(`Missing Input`)
+        error.status(404)
+        next(error)
+        return
+        }
     // Find index of product with given ID
     const productIndex = products.findIndex(product => product.id === productId);
 
@@ -83,10 +79,16 @@ app.get('/products', (req, res) => {
     res.send(tableHTML);
 });
 
-app.get('/products/search', (req, res) => {
+app.get('/products/search', (req, res, next) => {
     const minPrice = req.query.min;
     const maxPrice = req.query.max;
     const q = req.query.q.toLowerCase();
+    if(!minPrice || !maxPrice || !q) {
+        const error = new Error(`Missing Input`)
+        error.status(404)
+        next(error)
+        return
+        }
 
     const found = products.filter(p =>
         p.price >= parseInt(minPrice) &&
@@ -101,12 +103,20 @@ app.get('/products/search', (req, res) => {
     });
 
     tableHTML += '</table>';
+    res.send(found)
 
     res.send(tableHTML);
 });
 
-app.get('/products/:id', (req, res) => {
+app.get('/products/:id', (req, res,next) => {
     const userId = parseInt(req.params.id);
+    if (userId<0 ) {
+        const error = new Error('Invalid user ID');
+        error.statusCode = 404;
+        next(error)
+        return
+        
+    }
 
     const found = products.find(product => product.id === userId);
 
@@ -141,6 +151,33 @@ app.post('/products', (req, res) => {
             res.status(201).json(newProduct);
         }
     });
-    const err = new Error('This is a simulated error');
-    throw err;
+    
+});
+
+// Error Handling Middleware
+function errorHandler(err, req, res, next) {
+    console.error(err.msg);
+    
+    // Log the error
+    const log=`\t[${err.message}]\n`;
+    console.log(log);
+    // Creating a new file
+        fs.appendFile('log.txt', log, (err) => {
+            if (err) {
+            console.error('Error creating file:', err);
+            } else {
+            console.log('File created successfully.');
+            }
+        });
+
+    // Send user-friendly error message
+    res.status(500).send('Something went wrong!');
+    
+}
+
+app.use(errorHandler);
+
+
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
