@@ -63,6 +63,7 @@ const signUp = async () => {
 };
 
 
+
 module.exports = {
     addUser,
     authenticateUser,
