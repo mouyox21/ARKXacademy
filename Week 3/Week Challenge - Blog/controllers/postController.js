@@ -16,7 +16,7 @@ function createPost(req, res) {
     const newPost = postModel.createPost({ title, content });
     res.status(201).json(newPost);
 }
-
+    
 // Controller function to handle getting a post by ID
 function getPostById(req, res) {
     const postId = req.params.id;
