@@ -43,12 +43,13 @@ exports.hardDeleteExpiredProducts = async (req, res) => {
 };
 
 exports.bulkUpdateProducts = async (req, res) => {
+  const des = req.body.description
   try {
     const updatedProducts = await Product.updateMany(
       { inStock: true },
-      { description: `Updated description for in-stock product ` }
+      {$set:{ description: des }}
     );
-    res.json({ updatedCount: updatedProducts.nModified });
+    res.json({ updatedCount: updatedProducts.modifiedCount });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
