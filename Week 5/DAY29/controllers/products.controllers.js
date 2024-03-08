@@ -3,38 +3,36 @@ const Product = require("../models/product.model");
 exports.softDeletedProduct = async (req, res) => {
   const name = req.body.name;
   try {
-
     let product = await Product.findOneAndUpdate(
-      { name: name }, 
-      { $set: { isDeleted : true } }
-      );
-      
-      
+      { name: name },
+      { $set: { isDeleted: true } }
+    );
+
     if (product) {
       res.json(product);
     } else {
       res.status(404).send("Product not found");
     }
   } catch (e) {
-    console.error(e); 
-    res.status(500).send({ err: 'Error in updating the product' });
-  }}
+    console.error(e);
+    res.status(500).send({ err: "Error in updating the product" });
+  }
+};
 
-exports.getsoftDeletedProduct = async (req, res)=> {
+exports.getsoftDeletedProduct = async (req, res) => {
   try {
-    const products = await Product.find({isDeleted :true})
+    const products = await Product.find({ isDeleted: true });
     res.json(products);
-    
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
-}
+};
 
 exports.hardDeleteExpiredProducts = async (req, res) => {
   try {
     const currentDate = new Date();
     const deletedProducts = await Product.deleteMany({
-      expirationDate: { $lt: currentDate }
+      expirationDate: { $lt: currentDate },
     });
     res.json({ deletedCount: deletedProducts.deletedCount });
   } catch (error) {
@@ -43,18 +41,17 @@ exports.hardDeleteExpiredProducts = async (req, res) => {
 };
 
 exports.bulkUpdateProducts = async (req, res) => {
-  const des = req.body.description
+  const des = req.body.description;
   try {
     const updatedProducts = await Product.updateMany(
       { inStock: true },
-      {$set:{ description: des }}
+      { $set: { description: des } }
     );
     res.json({ updatedCount: updatedProducts.modifiedCount });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
-
 
 exports.bulkDeleteOutOfStockProducts = async (req, res) => {
   try {
@@ -65,27 +62,15 @@ exports.bulkDeleteOutOfStockProducts = async (req, res) => {
   }
 };
 
-
-
-
-
-
-
-
-
-
-
-exports.UpdateProduct = async(req, res) => {
-  const { name, price } = req.body; 
+exports.UpdateProduct = async (req, res) => {
+  const { name, price } = req.body;
 
   try {
-
     let product = await Product.findOneAndUpdate(
-      { name: name }, 
+      { name: name },
       { $set: { price: price } }
-      );
-      
-      
+    );
+
     if (product) {
       res.json(product);
     } else {
@@ -93,11 +78,9 @@ exports.UpdateProduct = async(req, res) => {
     }
   } catch (e) {
     console.error(e); // Log the actual error for debugging
-    res.status(500).send({ err: 'Error in updating the product' });
+    res.status(500).send({ err: "Error in updating the product" });
   }
-}
-
-
+};
 
 exports.getAllProducts = async (req, res) => {
   try {
@@ -109,8 +92,7 @@ exports.getAllProducts = async (req, res) => {
 };
 
 exports.addProduct = async (req, res) => {
-  const { name, price, description, inStock,expirationDate } = req.body;
- 
+  const { name, price, description, inStock, expirationDate } = req.body;
 
   try {
     const product = new Product({
@@ -118,7 +100,7 @@ exports.addProduct = async (req, res) => {
       price,
       description,
       inStock,
-      expirationDate
+      expirationDate,
     });
     await product.save();
     res.status(201).json({ message: "Product added successfully", product });
