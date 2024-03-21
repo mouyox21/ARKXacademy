@@ -1,0 +1,166 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    line-height: 1.6;
+}
+
+/* Header styles */
+#header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#header nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+#header nav ul li:last-child {
+    margin-right: 0;
+}
+
+#header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#header nav ul li a:hover {
+    color: #ffc107;
+    text-decoration: underline;
+}
+
+#header .search-form {
+    display: flex;
+    align-items: center;
+}
+
+#header .search-form input[type="text"] {
+    padding: 8px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 11px;
+}
+
+#header .search-form input[type="button"] {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffc107; /* Change to desired button color */
+    color: #333;
+    font-size: 11px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#header .search-form input[type="button"]:hover {
+    background-color: #dbe915; /* Change to desired hover button color */
+}
+
+#header .language-select {
+    display: flex;
+    align-items: center;
+}
+
+#header .language-select select {
+    padding: 8px;
+    font-size: 11px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: #333;
+    color: #fff;
+    appearance: none; /* Remove default select arrow */
+}
+
+#header .language-select input[type="button"] {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffc107; /* Change to desired button color */
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#header .language-select input[type="button"]:hover {
+    background-color: #ffca28; /* Change to desired hover button color */
+}
+
+
+/* Main content styles */
+main {
+    padding: 20px;
+}
+
+main div {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+main div p {
+    margin-bottom: 10px;
+}
+
+main div a {
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+main div img {
+    margin-bottom: 10px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer nav ul {
+    list-style: none;
+}
+
+footer nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+footer div p {
+    margin-bottom: 10px;
+}

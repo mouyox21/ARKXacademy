@@ -1,0 +1,43 @@
+/* Style for paragraph with class p1 */
+.p1 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Style for paragraph with class p2 */
+.p2 {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+/* Style for paragraph with class p3 */
+.p3 {
+  color: #ff0000; /* Red color */
+}
+
+/* Style for paragraph with class p4 */
+.p4 {
+  font-weight: bold;
+}
+
+/* Style for paragraph with class p5 */
+.p5 {
+  margin-top: 20px;
+}
+
+/* Style for paragraph with class p6 */
+.p6 {
+  margin-top: 20px;
+}
+
+/* Style for paragraph with class p7 */
+.p7 {
+  margin-top: 20px;
+}
+
+/* Style for paragraph with class p8 */
+.p8 {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #666666; /* Gray color */
+}

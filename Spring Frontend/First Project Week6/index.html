@@ -1,177 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Daily Challenge- Movie</title>
-</head>
-<body>
+  </head>
 
+
+  
+  <body>
     <!-- Start Header -->
-    <header id="header">
-    <a href="">
-        <h2>LOGO</h1>
-    </a>
-    <nav>
-        <ul>
+    <header id="header" class="container">
+      <div class="header-left">
+        <a href=""><h2>LOGO</h2></a>
+        <nav>
+          <ul>
             <li><a href="/index.html">Home</a></li>
             <li><a href="/Movies.html">Movies</a></li>
             <li><a href="">About Us</a></li>
             <li><a href="/Contact.html">Contact Us</a></li>
-        </ul>
-    </nav>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-right">
+        <div class="search-form">
+          <input type="text" title="searchMovie" placeholder="Find Movie ..." />
+          <input type="button" title="search" value="Search" />
+        </div>
 
-    <div>
-        <input type="text" title="searchMovie" placeholder="Find Movie ..." />
-        <input type="button" title="search" value="Search" />
-    </div>
-
-    <br>
-    <div>
-        <select name="Language" id="">
-            <option value="" >EN</option>
-            <option value="" >FR</option>
-            <option value="" >AR</option>
-        </select>
-        <br>
-        <input type="button" value="Subscribe">
-    </div>
+        <br />
+        <div class="language-select">
+          <select name="Language" id="">
+            <option value="EN">EN</option>
+            <option value="FR">FR</option>
+            <option value="AR">AR</option>
+          </select>
+          <br />
+          <input type="button" value="Subscribe" />
+        </div>
+      </div>
     </header>
     <!-- End Header  -->
-        
+
     <!-- Main Content -->
     <main>
-        <div>
+      <div >
+        <video
+          src="/Videos/John Wick_ Chapter 4 (2023) Final Trailer – Keanu Reeves, Donnie Yen, Bill Skarsgård.mp4"
+          controls
+        ></video>
+        <br />
+        <a href="#">Action</a>
+        <a href="#">Thriller</a>
 
-            <video src="/Videos/John Wick_ Chapter 4 (2023) Final Trailer – Keanu Reeves, Donnie Yen, Bill Skarsgård.mp4 " controls></video> <br>
-            <a href="">Action</a>
-            <a href="">Thriller</a>
+        <a href="#"><h3>John Wick 4</h3></a>
+        <p>8.2 </p>
+        <p>2023 </p>
+        <p>1 hr 25 mins </p>
+        <p>TV-MA </p>
+        <p>Enjoy exclusive Amazon Originals as well as popular movies and TV</p>
+        <p>shows for USD $120. Watch now, Cancel anytime </p>
+        <a href="/Movie_detail.html">Play Now</a>
+        <a href="/Movie_detail.html">Watch Later</a>
+        <a href="#">Added Watchlist</a>
+        </p>
+      </div>
+      <div>
+        <img
+          src="/Images/Scene_John_Wick4.jpg"
+          alt="John_Wick"
+          title="John Wick"
+        />
+        <br />
+        <a href="#">Action</a>
+        <a href="#">Thriller</a>
 
-            <a href=""><h3>John Wick 4</h3></a>
-            <p>
-                8.2 <br>
-                2023 <br>
-                1 hr 25 mins <br>
-                TV-MA <br>
-                Enjoy exclusive Amazon Originals as well as popular movies and TV shows for USD $120. Watch now, Cancel anytime <br>
-                <a href="/Movie_detail.html">Play Now</a>
-                <a href="/Movie_detail.html">Watch Later</a>
-                <a href="">Added Watchlist</a>
-            </p>
-            
-        </div>
-        <div>
+        <a href="#"><h3>John Wick 4</h3></a>
+        <p>
+          8.2 <br />
+          2023 <br />
+          1 hr 25 mins <br />
+          TV-MA <br />
+          Enjoy exclusive Amazon Originals as well as popular movies and TV
+          shows for USD $120. Watch now, Cancel anytime <br />
+          <a href="#">Play Now</a>
+          <a href="#">Watch Later</a>
+          <a href="#">Added Watchlist</a>
+        </p>
+      </div>
 
-            <img src="/Images/Scene_John_Wick4.jpg" alt="John_Wick" title="John Wick"/> <br>
-            <a href="">Action</a>
-            <a href="">Thriller</a>
+      <h4>Trending Movies</h4>
+      <a href="#">View all</a>
+      <div>
+        <img
+          src="/Images/spiderman_Poster.jpg"
+          width="300"
+          alt="SpiderMan"
+          title="SpiderMan"
+        />
+        <br />
+        <a href="#">Added to My List</a>
+        <a href="#">Added to My List</a>
+        <br /><br />
+        <a href="#"><strong>Spider Man Memo</strong></a>
+        <br />
+        <p>
+          2022<br />
+          1 hr 25 mins<br />
+          TV-MA<br />
+        </p>
+        <a href="#" title="Action">Action</a>
+        <a href="#" title="Anime">Anime</a>
+        <br />
+      </div>
+      <!-- Add more trending movie divs as needed -->
 
-            <a href=""><h3>John Wick 4</h3></a>
-            <p>
-                8.2 <br>
-                2023 <br>
-                1 hr 25 mins <br>
-                TV-MA <br>
-                Enjoy exclusive Amazon Originals as well as popular movies and TV shows for USD $120. Watch now, Cancel anytime <br>
-                <a href="">Play Now</a>
-                <a href="">Watch Later</a>
-                <a href="">Added Watchlist</a>
-            </p>
-            
-        </div>
-        
-        <h4>Trending Movies</h4>
-        <a href="">View all</a>
-        <div>
-            <img src="/Images/spiderman_Poster.jpg" width="300" alt="SpiderMan" title="SpiderMan"/>
-            <br>
-            <a href="">Added to My  List</a>
-            <a href="">Added to My  List</a>
-            <br><br>
-            <a href=""><strong>Spider Man Memo</strong></a>
-            <br>
-            <p>
-                2022<br>
-                1 hr 25 mins<br>
-                TV-MA<br>
-            </p>
-            <a href="" title="Action">Action</a>
-            <a href="" title="Anime">Anime</a>
-            <br>
-        </div>
-        <div>
-            <img src="/Images/The white house down Poster.jpg" width="300" alt="The White House Dow" title="The White House Dow"/>
-            <br>
-            <a href="">Added to My  List</a>
-            <a href="">Added to My  List</a>
-            <br><br>
-            <a href=""><strong>The White House Down </strong></a>
-            <br>
-            <p>
-                2023<br>
-                2 hr 35 mins<br>
-                TV-MA<br>
-            </p>
-            <a href="" title="Action">Action</a>
-            <a href="" title="Adventure">Adventure</a>
-            <br>
-        </div>
-        <div>
-            <img src="/Images/The post Poster.jpg" width="300" alt="The Post" title="The Post"/>
-            <br>
-            <a href="">Added to My  List</a>
-            <a href="">Added to My  List</a>
-            <br><br>
-            <a href=""><strong>The Post </strong></a>
-            <br>
-            <p>
-                2023<br>
-                1 hr 25 mins<br>
-                TV-MA<br>
-            </p>
-            <a href="" title="Romance">Romance</a>
-            <a href="" title="Thriller">Thriller</a>
-            <br>
-        </div>
-        <div>
-            <input type="button" value="<">
-            <input type="button" value=">">
-        </div>
-
+      <div>
+        <input type="button" value="<" />
+        <input type="button" value=">" />
+      </div>
     </main>
+
     <footer>
-        <a href="">
-            <h2>LOGO</h1>
-        </a>
-        <div>
-
-            <p>Connect with us </p>
-            <a href="">Facebook</a>
-            <a href="">Twitter</a>
-            <a href="">Github</a>
-            <p>Help</p>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="">My Account</a></li>
-                <li><a href="">Customer Support</a></li>
-                <li><a href="">Contact Us</a></li>
-                <li><a href="">About Us</a></li>
-            </ul>
-        </nav>
-        <div>
-            <p>Download Movies mobile App</p>
-            <img src="/Images/apple-app-store-logo.jpg" alt="" width="200" height="60">
-            <br>
-            <img src="/Images/en_badge_web_generic.png" alt="" width="220" height="100">
-        </div>
-        <div>
-            <p>Copyright  © 2023 Movie App. All rights reserved</p>
-            <ul>
-                <li><a href="">Privacy  Policy</a></li>
-                <li><a href="">Terms  of Service</a></li>
-            </ul>
-        </div>
-        <a href="#header">Top</a>
+      <a href="#"><h2>LOGO</h2></a>
+      <div>
+        <p>Connect with us</p>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Github</a>
+        <p>Help</p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">My Account</a></li>
+          <li><a href="#">Customer Support</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p>Download Movies mobile App</p>
+        <img
+          src="/Images/apple-app-store-logo.jpg"
+          alt=""
+          width="200"
+          height="60"
+        />
+        <br />
+        <img
+          src="/Images/en_badge_web_generic.png"
+          alt=""
+          width="220"
+          height="100"
+        />
+      </div>
+      <div>
+        <p>Copyright © 2023 Movie App. All rights reserved</p>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+      <a href="#header">Top</a>
     </footer>
-
-</body>
+  </body>
 </html>
