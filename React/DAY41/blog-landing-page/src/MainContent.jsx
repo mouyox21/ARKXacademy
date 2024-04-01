@@ -2,26 +2,27 @@ import React, { useState } from 'react';
 import Card from './Card';
 import EditModal from './EditModal';
 
+
 function MainContent({ blogPosts, setBlogPosts }) {
   const [editingPostId, setEditingPostId] = useState(null);
   const [isAddingBlog, setIsAddingBlog] = useState(false);
 
   const handleDelete = (id) => {
-    setBlogPosts(prevPosts => prevPosts.filter(post => post.id !== id));
+    setBlogPosts(prevPosts => prevPosts.filter(post => post._id !== id));
   };
 
   const handleEdit = (id) => {
     setEditingPostId(id);
   };
 
-  const handleSaveEdit = (id, newTitle, newDescription) => {
+  const handleSaveEdit = (id, newTitle, newcontent) => {
     setBlogPosts(prevPosts =>
       prevPosts.map(post => {
-        if (post.id === id) {
+        if (post._id === id) {
           return {
             ...post,
             title: newTitle,
-            description: newDescription
+            content: newcontent
           };
         }
         return post;
@@ -39,12 +40,12 @@ function MainContent({ blogPosts, setBlogPosts }) {
     setIsAddingBlog(true);
   };
 
-  const handleSaveAddBlog = (newTitle, newDescription) => {
+  const handleSaveAddBlog = (newTitle, newcontent) => {
     const newId = Date.now(); // Generate a unique ID
     const newBlogPost = {
       id: newId,
       title: newTitle,
-      description: newDescription
+      content: newcontent
     };
     setBlogPosts(prevPosts => [...prevPosts, newBlogPost]);
     setEditingPostId(null);
@@ -57,21 +58,21 @@ function MainContent({ blogPosts, setBlogPosts }) {
       <button onClick={handleAddBlog} className="mb-4 px-4 py-2 bg-blue-500 text-white rounded-md">Add Blog</button>
       {(isAddingBlog || editingPostId !== null) && (
         <EditModal
-          title={isAddingBlog ? '' : blogPosts.find(post => post.id === editingPostId)?.title || ''}
-          description={isAddingBlog ? '' : blogPosts.find(post => post.id === editingPostId)?.description || ''}
-          onSave={isAddingBlog ? handleSaveAddBlog : (newTitle, newDescription) => handleSaveEdit(editingPostId, newTitle, newDescription)}
+          title={isAddingBlog ? '' : blogPosts.find(post => post._id === editingPostId)?.title || ''}
+          content={isAddingBlog ? '' : blogPosts.find(post => post._id === editingPostId)?.content || ''}
+          onSave={isAddingBlog ? handleSaveAddBlog : (newTitle, newcontent) => handleSaveEdit(editingPostId, newTitle, newcontent)}
           onCancel={handleCancelEdit}
         />
       )}
       {blogPosts.length > 0 ? (
         <ul className="grid grid-cols-4 gap-4">
           {blogPosts.map(post => (
-            <div key={post.id}>
+            <div key={post._id}>
               <Card
                 title={post.title}
-                description={post.description}
-                onDelete={() => handleDelete(post.id)}
-                onEdit={() => handleEdit(post.id)}
+                content={post.content}
+                onDelete={() => handleDelete(post._id)}
+                onEdit={() => handleEdit(post._id)}
               />
             </div>
           ))}
@@ -79,6 +80,8 @@ function MainContent({ blogPosts, setBlogPosts }) {
       ) : (
         <p>No posts found</p>
       )}
+
+   
     </main>
   );
 }
